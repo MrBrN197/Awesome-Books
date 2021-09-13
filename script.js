@@ -47,12 +47,12 @@ addBtn.addEventListener('click', () => {
 
   const titleElement = document.getElementById('title');
   const authorElement = document.getElementById('author');
-  const title = titleElement.value
-  const author = authorElement.value
+  const title = titleElement.value;
+  const author = authorElement.value;
   if (!title || !author) {
     return;
   }
   bookLibrary.addBook(title, author);
-  titleElement.value = "";
-  authorElement.value = "";
+  titleElement.value = '';
+  authorElement.value = '';
 });
