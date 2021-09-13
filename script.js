@@ -45,10 +45,14 @@ const addBtn = document.querySelector('.add-book-btn');
 addBtn.addEventListener('click', () => {
   // add book
 
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
+  const titleElement = document.getElementById('title');
+  const authorElement = document.getElementById('author');
+  const title = titleElement.value
+  const author = authorElement.value
   if (!title || !author) {
     return;
   }
   bookLibrary.addBook(title, author);
+  titleElement.value = "";
+  authorElement.value = "";
 });
