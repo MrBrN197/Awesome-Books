@@ -8,18 +8,19 @@ class BookLibrary {
         <h2>${book.title}</h2>
         <p>${book.author}</p>
       `;
-    
+
       const removeBtn = document.createElement('button');
       removeBtn.innerText = 'Remove';
       removeBtn.addEventListener('click', () => {
-        removeBook(div, book.title, book.author);
+        this.removeBook(div, book.title, book.author);
       });
-    
+
       div.appendChild(removeBtn);
-    
+
       this.booksCollection.appendChild(div);
     });
   }
+
   addBook(title, author) {
     this.bookList.push({ title, author });
     localStorage.setItem('books', JSON.stringify(this.bookList));
@@ -39,6 +40,7 @@ class BookLibrary {
 
     this.booksCollection.appendChild(div);
   }
+
   removeBook(element, title, author) {
     element.remove();
     this.bookList = this.bookList.filter((book) => book.title !== title || book.author !== author);
