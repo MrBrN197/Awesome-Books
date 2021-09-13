@@ -1,4 +1,81 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 input {
   display: block;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.books {
+  background-color: lavender;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 0.4em;
+  margin: 2rem;
+}
+
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4em 0;
+}
+
+.book:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.book button {
+  background-color: whitesmoke;
+  border: 2px solid gray;
+  padding: 0.5em 1em;
+  border-radius: 0.2em;
+  font-weight: 600;
+  margin: 0 1em;
+  cursor: pointer;
+}
+
+.book p {
+  margin: 0 1em;
+}
+
+.bookInput {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  justify-content: center;
+  align-items: flex-end;
+  width: 20rem;
+  margin: 4rem auto;
+}
+
+.bookInput input {
+  width: 100%;
+  padding: 0.5em;
+  border: 2px solid black;
+  border-radius: 0.2em;
+}
+
+.add-book-btn {
+  padding: 0.5em 1em;
+  border: 2px solid gray;
+  cursor: pointer;
+  border-radius: 0.2em;
+}
+
+hr {
+  margin: 20px auto;
+  width: 10rem;
 }

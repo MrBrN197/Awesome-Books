@@ -3,31 +3,21 @@ class BookLibrary {
     this.booksCollection = document.querySelector('.books');
     this.bookList = JSON.parse(localStorage.getItem('books')) || [];
     this.bookList.forEach((book) => {
-      const div = document.createElement('div');
-      div.innerHTML = `
-        <h2>${book.title}</h2>
-        <p>${book.author}</p>
-      `;
-
-      const removeBtn = document.createElement('button');
-      removeBtn.innerText = 'Remove';
-      removeBtn.addEventListener('click', () => {
-        this.removeBook(div, book.title, book.author);
-      });
-
-      div.appendChild(removeBtn);
-
-      this.booksCollection.appendChild(div);
+      this.createBookElement(book.title, book.author);
     });
   }
 
   addBook(title, author) {
     this.bookList.push({ title, author });
     localStorage.setItem('books', JSON.stringify(this.bookList));
+    this.createBookElement(title, author);
+  }
+
+  createBookElement(title, author) {
     const div = document.createElement('div');
+    div.classList.add('book');
     div.innerHTML = `
-    <h2>${title}</h2>
-    <p>${author}</p>
+    <p>"${title}" by ${author}</p>
     `;
 
     const removeBtn = document.createElement('button');
@@ -55,10 +45,14 @@ const addBtn = document.querySelector('.add-book-btn');
 addBtn.addEventListener('click', () => {
   // add book
 
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
+  const titleElement = document.getElementById('title');
+  const authorElement = document.getElementById('author');
+  const title = titleElement.value;
+  const author = authorElement.value;
   if (!title || !author) {
     return;
   }
   bookLibrary.addBook(title, author);
+  titleElement.value = '';
+  authorElement.value = '';
 });
