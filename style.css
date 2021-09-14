@@ -12,6 +12,41 @@ input {
   display: block;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  margin: 0.5rem 1rem;
+  border: 2px solid black;
+  border-radius: 0.4rem;
+}
+
+header .links {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+header .links .link {
+  cursor: pointer;
+  padding: 0.5em 1em;
+}
+
+header .links .link + .link {
+  border-left: 1px solid black;
+}
+
+header .links .link.selected {
+  color: darkcyan;
+}
+
+.date {
+  display: block;
+  text-align: right;
+  margin-right: 2rem;
+}
+
 h1,
 h2 {
   text-align: center;
@@ -24,6 +59,14 @@ h2 {
   border: 2px solid black;
   border-radius: 0.4em;
   margin: 2rem;
+}
+
+.books .no-books {
+  background-color: rgb(83, 83, 83);
+  display: block;
+  padding: 1em;
+  color: white;
+  font-weight: 600;
 }
 
 .book {
@@ -78,4 +121,35 @@ h2 {
 hr {
   margin: 20px auto;
   width: 10rem;
+}
+
+.contact {
+  padding-bottom: 4rem;
+  width: 35rem;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.contact ul {
+  width: fit-content;
+  margin: 0.5rem 2rem;
+}
+
+footer {
+  margin: 0.5rem 1rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 0.4rem;
+}
+
+section:not(#add-books) {
+  display: none;
 }

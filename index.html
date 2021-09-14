@@ -5,18 +5,50 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./style.css">
+	<script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
 	<title>Awesome Books</title>
 </head>
 <body>
-	<h1>All Awesome books</h1>
-	<div class="books"></div>
-	<hr>
-	<h2>Add a new Book</h2>
-	<div class="bookInput">
-		<input type="text" id="title" name="title" placeholder="Title">
-		<input type="text" id="author" name="author" placeholder="Author">
-		<button type="button" class="add-book-btn">Add</button>
-	</div>
+
+	<header>
+		<p>Awesome Books</p>
+		<ul class="links">
+			<li class="link" onclick="displayBookList(this)">List</li>
+			<li class="link selected" onclick="displayAddBooks(this)">Add new</li>
+			<li class="link" onclick="displayContact(this)">Contact</li>
+		</ul>
+	</header>
+	<span class="date"></span>
+	<main>
+		<section id="book-list">
+			<h1>All Awesome books</h1>
+			<div class="books">
+				<span class="no-books">You don't have any Books added</span>
+			</div>
+			<hr>
+		</section>
+		<section id="add-books">
+			<h2>Add a new Book</h2>
+			<div class="bookInput">
+				<input type="text" id="title" name="title" placeholder="Title">
+				<input type="text" id="author" name="author" placeholder="Author">
+				<button type="button" class="add-book-btn">Add</button>
+			</div>
+		</section>
+		<section id="contact-info" class="contact">
+			<h2>Contact Information</h2>
+			<p>Do you have any questions or you just want to say "Hello"?</p>
+			<p>You can reach out to us!</p>
+			<ul>
+				<li>Our email: brianorora@gmail.com & nnaemekasilver@gmail.com</li>
+				<li>Our phone Number: 123456788</li>
+				<li>Our address @ Microverse</li>
+			</ul>
+		</section>
+		<footer>
+			<p>Copyright</p>
+		</footer>
+	</main>
 
 	<script src="./script.js"></script>
 </body>
