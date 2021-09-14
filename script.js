@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
   const { DateTime } = luxon;
   const now = DateTime.now();
   document.querySelector('.date').innerText = now.toLocaleString(DateTime.DATETIME_MED);
-})
+});
 
 const bookLibrary = new BookLibrary();
 
@@ -62,3 +62,37 @@ addBtn.addEventListener('click', () => {
   titleElement.value = '';
   authorElement.value = '';
 });
+
+const bookListSection = document.getElementById('book-list');
+const addBookSection = document.getElementById('add-books');
+const contactSection = document.getElementById('contact-info');
+const links = document.querySelectorAll('header .links .link');
+
+function removeLinks() {
+  links.forEach((link) => {
+    link.classList.remove('selected');
+  });
+}
+
+/* eslint-disable no-unused-vars */
+const displayBookList = (elem) => {
+  bookListSection.style.display = 'block';
+  addBookSection.style.display = 'none';
+  contactSection.style.display = 'none';
+  removeLinks();
+  elem.classList.add('selected');
+};
+const displayAddBooks = (elem) => {
+  bookListSection.style.display = 'none';
+  addBookSection.style.display = 'block';
+  contactSection.style.display = 'none';
+  removeLinks();
+  elem.classList.add('selected');
+};
+const displayContact = (elem) => {
+  bookListSection.style.display = 'none';
+  addBookSection.style.display = 'none';
+  contactSection.style.display = 'block';
+  removeLinks();
+  elem.classList.add('selected');
+};
