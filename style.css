@@ -12,6 +12,38 @@ input {
   display: block;
 }
 
+ul {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  margin: 0.5rem 1rem;
+  border: 2px solid black;
+  border-radius: 0.4rem;
+}
+
+header .links {
+  display: flex;
+  gap: 1rem;
+}
+
+header .links .link {
+  cursor: pointer;
+  padding: 0.5em 1em;
+}
+
+header .links .link + .link {
+  border-left: 1px solid black;
+}
+
+header .links .link.selected {
+  color: darkcyan;
+}
+
 h1,
 h2 {
   text-align: center;

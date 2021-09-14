@@ -8,15 +8,27 @@
 	<title>Awesome Books</title>
 </head>
 <body>
-	<h1>All Awesome books</h1>
-	<div class="books"></div>
-	<hr>
-	<h2>Add a new Book</h2>
-	<div class="bookInput">
-		<input type="text" id="title" name="title" placeholder="Title">
-		<input type="text" id="author" name="author" placeholder="Author">
-		<button type="button" class="add-book-btn">Add</button>
-	</div>
+
+	<header>
+		<p>Awesome Books</p>
+		<ul class="links">
+			<li class="link">List</li>
+			<li class="link selected">Add new</li>
+			<li class="link">Contact</li>
+		</ul>
+	</header>
+
+	<main>
+		<h1>All Awesome books</h1>
+		<div class="books"></div>
+		<hr>
+		<h2>Add a new Book</h2>
+		<div class="bookInput">
+			<input type="text" id="title" name="title" placeholder="Title">
+			<input type="text" id="author" name="author" placeholder="Author">
+			<button type="button" class="add-book-btn">Add</button>
+		</div>
+	</main>
 
 	<script src="./script.js"></script>
 </body>
