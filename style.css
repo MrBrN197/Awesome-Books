@@ -61,6 +61,14 @@ h2 {
   margin: 2rem;
 }
 
+.books .no-books {
+  background-color: rgb(83, 83, 83);
+  display: block;
+  padding: 1em;
+  color: white;
+  font-weight: 600;
+}
+
 .book {
   display: flex;
   align-items: center;
@@ -142,6 +150,6 @@ footer {
   border-radius: 0.4rem;
 }
 
-section:not(#add-books) {
+/* section:not(#add-books) {
   display: none;
-}
+} */

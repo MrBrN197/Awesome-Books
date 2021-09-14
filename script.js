@@ -5,9 +5,11 @@ class BookLibrary {
     this.bookList.forEach((book) => {
       this.createBookElement(book.title, book.author);
     });
+    this.noBooksSpan = document.querySelector('.books .no-books');
   }
 
   addBook(title, author) {
+    this.noBooksSpan.style.display = 'none';
     this.bookList.push({ title, author });
     localStorage.setItem('books', JSON.stringify(this.bookList));
     this.createBookElement(title, author);
@@ -32,13 +34,15 @@ class BookLibrary {
   }
 
   removeBook(element, title, author) {
-    element.remove();
     this.bookList = this.bookList.filter((book) => book.title !== title || book.author !== author);
+    if (this.bookList.length === 0) { this.noBooksSpan.style.display = 'block'; }
     localStorage.setItem('books', JSON.stringify(this.bookList));
+    element.remove();
   }
 }
 
 window.addEventListener('load', () => {
+  /* eslint-disable-next-line no-undef */
   const { DateTime } = luxon;
   const now = DateTime.now();
   document.querySelector('.date').innerText = now.toLocaleString(DateTime.DATETIME_MED);
@@ -68,11 +72,11 @@ const addBookSection = document.getElementById('add-books');
 const contactSection = document.getElementById('contact-info');
 const links = document.querySelectorAll('header .links .link');
 
-function removeLinks() {
+const removeLinks = () => {
   links.forEach((link) => {
     link.classList.remove('selected');
   });
-}
+};
 
 /* eslint-disable no-unused-vars */
 const displayBookList = (elem) => {
