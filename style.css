@@ -12,10 +12,6 @@ input {
   display: block;
 }
 
-ul {
-  list-style-type: none;
-}
-
 header {
   display: flex;
   justify-content: space-between;
@@ -29,6 +25,7 @@ header {
 header .links {
   display: flex;
   gap: 1rem;
+  list-style-type: none;
 }
 
 header .links .link {
@@ -110,4 +107,24 @@ h2 {
 hr {
   margin: 20px auto;
   width: 10rem;
+}
+
+.contact {
+  padding-bottom: 4rem;
+  width: 35rem;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  width: fit-content;
+  margin-bottom: 2px;
+}
+
+.contact ul {
+  width: fit-content;
+  margin: 0.5rem 2rem;
 }
