@@ -41,6 +41,12 @@ header .links .link.selected {
   color: darkcyan;
 }
 
+.date {
+  display: block;
+  text-align: right;
+  margin-right: 2rem;
+}
+
 h1,
 h2 {
   text-align: center;

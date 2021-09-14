@@ -38,6 +38,12 @@ class BookLibrary {
   }
 }
 
+window.addEventListener('load', () => {
+  const { DateTime } = luxon;
+  const now = DateTime.now();
+  document.querySelector('.date').innerText = now.toLocaleString(DateTime.DATETIME_MED);
+})
+
 const bookLibrary = new BookLibrary();
 
 const addBtn = document.querySelector('.add-book-btn');
