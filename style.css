@@ -150,6 +150,6 @@ footer {
   border-radius: 0.4rem;
 }
 
-/* section:not(#add-books) {
+section:not(#add-books) {
   display: none;
-} */
+}
