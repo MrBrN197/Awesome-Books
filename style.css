@@ -142,6 +142,6 @@ footer {
   border-radius: 0.4rem;
 }
 
-section {
+section:not(#add-books) {
   display: none;
 }
