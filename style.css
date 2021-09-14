@@ -128,3 +128,10 @@ hr {
   width: fit-content;
   margin: 0.5rem 2rem;
 }
+
+footer {
+  margin: 0.5rem 1rem;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 0.4rem;
+}
